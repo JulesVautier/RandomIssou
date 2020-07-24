@@ -40,10 +40,19 @@ function randomIssou() {
     textArea.val(text)
 }
 
+function postOuCancer() {
+    alert("post ou cancer")
+    return true
+}
+
+function catchSubmit() {
+    $(".js-post-message").click(randomIssou)
+    $(".js-post-topic").click(randomIssou)
+}
+
 function addRandomIssouButtun() {
-    var jvEditor = document.getElementsByClassName("jv-editor-toolbar")
-    console.log(jvEditor)
     $(".jv-editor-toolbar").append( "<input id='RandomIssou' type='button' value='RandomIssou' onclick='randomIssou();' />")
     document.getElementById("RandomIssou").onclick = randomIssou;
 }
 addRandomIssouButtun()
+catchSubmit()
