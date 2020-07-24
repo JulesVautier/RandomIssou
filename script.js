@@ -32,15 +32,17 @@ function parseText(lines) {
     return lines.join('\n')
 }
 
-function readtext() {
+function randomIssou() {
     var textArea = $("[name='message_topic']");
     var text = textArea.val()
     text = parseText(text.split('\n'))
     textArea.val(text)
 }
 
-var textArea = $("[name='message_topic']");
-textArea.val("je suis en\n      \nvacances\n");
-//setInterval(readtext, 1000);
-readtext()
-readtext()
+function addRandomIssouButtun() {
+    var jvEditor = document.getElementsByClassName("jv-editor-toolbar")
+    console.log(jvEditor)
+    $(".jv-editor-toolbar").append( "<input id='RandomIssou' type='button' value='clickme' onclick='randomIssou();' />")
+    document.getElementById("RandomIssou").onclick = randomIssou;
+}
+addRandomIssouButtun()
