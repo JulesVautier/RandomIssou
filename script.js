@@ -11,13 +11,13 @@
 // ==/UserScript==
 
 const emptyLine = /^(\s+)$/
-const lineFinishingByStickers = ""
+const lineFinishingByStickers = /(https.*png\s*)$/
 
 const sticker = "https://image.noelshack.com/fichiers/2018/27/4/1530827992-jesusreup.png"
 
 function parseText(lines) {
     for(var i = 0; i < lines.length; i++) {
-        if (lines[i].length > 0 && !lines[i].match(emptyLine)) {
+        if (lines[i].length > 0 && !lines[i].match(emptyLine) && !lines[i].match(lineFinishingByStickers)) {
             console.log('b__' + lines[i] + "_")
             lines[i] = lines[i].concat(' ', sticker)
             console.log('a__' + lines[i] + "_")
@@ -38,4 +38,5 @@ function readtext() {
 var textArea = $("[name='message_topic']");
 textArea.val("je suis en\n      \nvacances\n");
 //setInterval(readtext, 1000);
+readtext()
 readtext()
