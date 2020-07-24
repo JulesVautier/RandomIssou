@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name         RandomIssou
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @namespace    RandomIssou
+// @version      1.0
+// @description  put random stickers everywher issou
 // @author       PoissonVache
 // @match        https://www.jeuxvideo.com/forums/*
+// @match        https://m.jeuxvideo.com/forums/*
+// @match        https://m.jeuxvideo.com/forums/*
+// @match        https://www.jeuxvideo.com/messages-prives/*
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @require http://code.jquery.com/jquery-3.4.1.min.js
