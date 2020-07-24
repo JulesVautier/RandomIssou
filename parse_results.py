@@ -10,6 +10,7 @@ def main():
     with open('results.json', 'r') as fp:
         results = fp.read()
         stickers = re.findall(op_regex, results)
+        stickers = list(set(stickers))
         print(len(stickers))
         with open('parsed_results.json', 'w+') as parsed_fp:
             parsed_fp.write(json.dumps(stickers))
