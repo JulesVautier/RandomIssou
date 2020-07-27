@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         RandomIssou
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       PoissonVache
+// @downloadURL  https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
+// @updateURL    https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
 // @match        https://www.jeuxvideo.com/*
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @require http://code.jquery.com/jquery-latest.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js
 // ==/UserScript==
-
 const emptyLine = /^((\s|\>)+)$/
 const lineFinishingByStickers = /(http.*(?:png|jpg|jpeg|gif)\s*)$/
 const citation = /^\>/
