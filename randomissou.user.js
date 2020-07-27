@@ -6,7 +6,8 @@
 // @author       PoissonVache
 // @downloadURL  https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
 // @updateURL    https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
-// @match        https://www.jeuxvideo.com/*
+// @match        https://www.jeuxvideo.com/forums/*
+// @match        https://www.jeuxvideo.com/messages-prives/*
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @require http://code.jquery.com/jquery-latest.js
