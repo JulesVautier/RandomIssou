@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RandomIssou
 // @namespace    http://tampermonkey.net/
-// @version      0.2.1
+// @version      0.3
 // @description  try to take over the world!
 // @author       PoissonVache
 // @downloadURL  https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
