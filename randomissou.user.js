@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RandomIssou
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  put random stickers at the end of the lines ISSOU
 // @author       PoissonVache
 // @downloadURL  https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
@@ -30,12 +30,12 @@ function getRandomSticker() {
     return stickers[index]
 }
 
-function parseText(lines) {
+function parseText(lines, force) {
     for(var i = 0; i < lines.length; i++) {
         if (lines[i].length > 0 && !lines[i].match(emptyLine) && !lines[i].match(stickerRegex) && !lines[i].match(citation)) {
             lines[i] = lines[i].concat(' ', "https://image.noelshack.com/fichiers/".concat(getRandomSticker()))
         }
-        else if (numberIterations >= 1 && !lines[i].match(citation)) {
+        else if (force && numberIterations >= 1 && !lines[i].match(citation)) {
             lines[i] = lines[i].replace(stickerRegex, function () {
                 return "https://image.noelshack.com/fichiers/".concat(getRandomSticker())
             })
@@ -45,7 +45,7 @@ function parseText(lines) {
 }
 
 function randomIssou(force) {
-    if ( Cookies.get(RANDOMISSOU_COOKIE_ENABLE) && force === false) {
+    if (Cookies.get(RANDOMISSOU_COOKIE_ENABLE) == 'false' && force === false) {
         return
     }
     var textArea = $("[name='message_topic']");
@@ -53,10 +53,9 @@ function randomIssou(force) {
         textArea = $("[name='message']");
     }
     var text = textArea.val()
-    text = parseText(text.split('\n'))
+    text = parseText(text.split('\n'), force)
     textArea.val(text)
     numberIterations += 1
-    console.log(numberIterations)
 }
 
 function postOuCancer() {
