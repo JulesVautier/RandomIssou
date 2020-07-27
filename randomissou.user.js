@@ -64,20 +64,17 @@ function postOuCancer() {
 }
 
 
-function addRandomIssouButton() {
-    $(".jv-editor-toolbar").append( "<input id='RandomIssou' type='button' value='RandomIssou' onclick='randomIssou(event, true);' />")
+function addRandomIssouMenu() {
+    $(".jv-editor-toolbar").append("<div id='RandomIssouToolbar' class='btn-group'></div>")
+    $("#RandomIssouToolbar").append("<button id='RandomIssou' class='btn btn-jv-editor-toolbar' type='button' value='RandomIssou'>Refesh Stickers</button>")
+    $("#RandomIssouToolbar").append("<button id='EnableRandomIssou' class='btn btn-jv-editor-toolbar' type='button'> lol </button>")
     document.getElementById("RandomIssou").onclick = function() {
         randomIssou(true);
     }
-}
-
-function addSelectorButton() {
-    $(".jv-editor-toolbar").append("<input id='EnableRandomIssou' type='button' value='' onclick='enableRandomIssou();' />")
     document.getElementById("EnableRandomIssou").onclick = function() {
         enableRandomIssou();
     }
-    displayEnableButton()
-}
+    displayEnableButton()}
 
 function enableRandomIssou() {
     var enabled = Cookies.get(RANDOMISSOU_COOKIE_ENABLE) == 'true'
@@ -89,10 +86,10 @@ function enableRandomIssou() {
 function displayEnableButton() {
     var enabled = Cookies.get(RANDOMISSOU_COOKIE_ENABLE) == 'true'
     if (enabled) {
-        $("#EnableRandomIssou").val("Random mode: ON")
+        $("#EnableRandomIssou").html("ON")
         $("#EnableRandomIssou").css("color", "green")
     } else {
-        $("#EnableRandomIssou").val("Random mode: OFF")
+        $("#EnableRandomIssou").html("OFF")
         $("#EnableRandomIssou").css("color", "red")
     }
 }
@@ -114,6 +111,5 @@ function initCookies() {
 }
 
 initCookies()
-addRandomIssouButton();
-addSelectorButton();
+addRandomIssouMenu();
 catchSubmit();
