@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RandomIssou
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  put random stickers at the end of the lines ISSOU
 // @author       PoissonVache
 // @downloadURL  https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
@@ -35,7 +35,7 @@ function parseText(lines) {
         if (lines[i].length > 0 && !lines[i].match(emptyLine) && !lines[i].match(stickerRegex) && !lines[i].match(citation)) {
             lines[i] = lines[i].concat(' ', "https://image.noelshack.com/fichiers/".concat(getRandomSticker()))
         }
-        if (numberIterations >= 1) {
+        else if (numberIterations >= 1 && !lines[i].match(citation)) {
             lines[i] = lines[i].replace(stickerRegex, function () {
                 return "https://image.noelshack.com/fichiers/".concat(getRandomSticker())
             })
