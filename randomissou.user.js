@@ -95,10 +95,7 @@ function initCookies() {
     var enabled = Cookies.get("RANDOMISSOU_COOKIE_ENABLE")
     if (enabled === undefined) {
         Cookies.set("RANDOMISSOU_COOKIE_ENABLE", true)
-        enabled = Cookies.get("RANDOMISSOU_COOKIE_ENABLE")
     }
-    console.log(Cookies.get("RANDOMISSOU_COOKIE_ENABLE"))
-    console.log(typeof(Cookies.get("RANDOMISSOU_COOKIE_ENABLE")))
 }
 
 initCookies()
