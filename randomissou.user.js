@@ -66,9 +66,9 @@ function postOuCancer() {
 
 function addRandomIssouMenu() {
     $(".jv-editor-toolbar").append("<div id='RandomIssouToolbar' class='btn-group'></div>")
-    $("#RandomIssouToolbar").append("<button id='RandomIssou' class='btn btn-jv-editor-toolbar' type='button' value='RandomIssou'>Refesh Stickers</button>")
+    $("#RandomIssouToolbar").append("<button id='RandomIssouReload' class='btn btn-jv-editor-toolbar' type='button' value='RandomIssou'>Refesh Stickers</button>")
     $("#RandomIssouToolbar").append("<button id='EnableRandomIssou' class='btn btn-jv-editor-toolbar' type='button'> lol </button>")
-    document.getElementById("RandomIssou").onclick = function() {
+    document.getElementById("RandomIssouReload").onclick = function() {
         randomIssou(true);
     }
     document.getElementById("EnableRandomIssou").onclick = function() {
