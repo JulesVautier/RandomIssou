@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RandomIssou
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.7
 // @description  put random stickers at the end of the lines ISSOU
 // @author       PoissonVache
 // @downloadURL  https://github.com/JulesVautier/RandomIssou/raw/master/randomissou.user.js
@@ -71,7 +71,7 @@ function addRandomIssouMenu() {
     const randomIssouOnOff = "<div class='pull-right jv-editor-option-on-off'><span class='label-previsu'>Randomissou</span><button id='EnableRandomIssou' type='button' class='btn-on-off active' autocomplete='off'></button></div>"
     $(".jv-editor-toolbar").append("<div id='RandomIssouToolbar' class='btn-group'></div>")
     $(".jv-editor-toolbar").append(randomIssouOnOff)
-    $("#RandomIssouToolbar").append("<button id='RandomIssouReload' data-toggle='tooltip' title='Clique ici pour randomizer ton message !' class='btn btn-jv-editor-toolbar tooltip' type='button' value='RandomIssou'>"+diceImg+"</button>")
+    $("#RandomIssouToolbar").append("<button id='RandomIssouReload' data-toggle='tooltip' title='Clique ici pour randomizer ton message !' class='btn btn-jv-editor-toolbar tooltip' type='button' value='RandomIssou' style='color: #8a8a8a; padding-top: 0px'>"+diceImg+"</button>")
     document.getElementById("RandomIssouReload").onclick = function() {
         randomIssou(true);
     }
