@@ -68,9 +68,10 @@ function postOuCancer() {
 
 function addRandomIssouMenu() {
     const diceImg = "<img src=\"" +dice +"\" width='16' height='16'/></div>"
+    const randomIssouOnOff = "<div class='pull-right jv-editor-option-on-off'><span class='label-previsu'>Randomissou</span><button id='EnableRandomIssou' type='button' class='btn-on-off active' autocomplete='off'></button></div>"
     $(".jv-editor-toolbar").append("<div id='RandomIssouToolbar' class='btn-group'></div>")
+    $(".jv-editor-toolbar").append(randomIssouOnOff)
     $("#RandomIssouToolbar").append("<button id='RandomIssouReload' class='btn btn-jv-editor-toolbar' type='button' value='RandomIssou'>"+diceImg+"</button>")
-    $("#RandomIssouToolbar").append("<button id='EnableRandomIssou' class='btn btn-jv-editor-toolbar' type='button'> lol </button>")
     document.getElementById("RandomIssouReload").onclick = function() {
         randomIssou(true);
     }
@@ -89,11 +90,9 @@ function enableRandomIssou() {
 function displayEnableButton() {
     var enabled = Cookies.get(RANDOMISSOU_COOKIE_ENABLE) == 'true'
     if (enabled) {
-        $("#EnableRandomIssou").html("ON")
-        $("#EnableRandomIssou").css("color", "green")
+        $("#EnableRandomIssou").addClass("active")
     } else {
-        $("#EnableRandomIssou").html("OFF")
-        $("#EnableRandomIssou").css("color", "red")
+        $("#EnableRandomIssou").removeClass("active")
     }
 }
 
